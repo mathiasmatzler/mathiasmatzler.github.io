@@ -16,9 +16,17 @@ $(document).ready(function () {
   // Calculate center of container
   var centerX = $('#myCanvas').width() / 2;
   var centerY = $('#myCanvas').height() / 2;
-  $('#myCanvas').css({
-    'transform': 'translate(' + centerX + 'px, ' + centerY + 'px)'
+
+  // start overlay infomation text
+  new Typed('#startOverlay>p', {
+    strings: ["Click to start..."],
+    typeSpeed: 50,
   });
+
+
+  // $('#myCanvas').css({ // TODO needed or even buggy?
+  //   'transform': 'translate(' + centerX + 'px, ' + centerY + 'px)'
+  // });
 
   // initialize Paper.js
   paper.install(window);
@@ -49,7 +57,7 @@ $(document).ready(function () {
     if (!path) {
       path = new paper.Path();
       path.strokeColor = 'black'; // Adjust the color as desired
-      path.strokeWidth = 10; // Adjust the stroke width as desired
+      path.strokeWidth = 5; // Adjust the stroke width as desired
       path.strokeCap = 'round'; // Adjust the stroke cap as desired
     }
     var point = new paper.Point(canvasWidth - mouseX, canvasHeight - mouseY);
@@ -108,6 +116,9 @@ $(document).ready(function () {
   });
 
   // Lock the pointer when the user clicks on the canvas
+  $('#startOverlay').click(() => {
+    $('#myCanvas').get(0).requestPointerLock();
+  });
   $('#spyhole').click(() => {
     $('#myCanvas').get(0).requestPointerLock();
   });
@@ -118,9 +129,16 @@ $(document).ready(function () {
     if (document.pointerLockElement === canvas) {
       console.log("The pointer lock status is now locked");
       document.addEventListener("mousemove", updatePosition, false);
+      $('#startOverlay').hide();
+      $('#escText').show();
+      new Typed('#escText', {
+        strings: ["Press ESC to exit..."],
+        typeSpeed: 50,
+      });
     } else {
       console.log("The pointer lock status is now unlocked");
       document.removeEventListener("mousemove", updatePosition, false);
+      $('#escText').hide();
     }
   }
 

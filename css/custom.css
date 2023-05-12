@@ -6,6 +6,23 @@
   overflow: hidden;
 }
 
+#startOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 100;
+}
+
+#startOverlay>p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+}
+
 #grid {
   position: absolute;
   top: 0;
@@ -24,8 +41,9 @@
   height: 400px; /* Adjust the size of the transparent circle */
   border-radius: 50%;
   background-color: transparent;
-  border: 5px solid white; /* Add a border to the transparent circle */
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
+  /*border: 5px solid white; !* Add a border to the transparent circle *!*/
+  /*box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);*/
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1);
 }
 
 #myCanvas {
@@ -37,30 +55,16 @@
   background: yellow;
 }
 
-
-#dot {
+#escText {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  /*transform: translate(-50%, -50%);*/
-  width: 20px; /* Adjust dot size as desired */
-  height: 20px; /* Adjust dot size as desired */
-  background-color: red; /* Adjust dot color as desired */
-  border-radius: 50%; /* Make the dot circular */
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
+  color: white;
 }
 
 #downloadBtn {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #007bff; /* Adjust button color as desired */
-  color: white;
-  border: none;
 }
