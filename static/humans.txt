@@ -3,11 +3,11 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <Lukas Alber> -- <Software engineer> -- <Software Alber>
 
 # THANKS
 
-    <name>
+    <Dominik Matzler>
 
 # TECHNOLOGY COLOPHON
 

@@ -1,5 +1,5 @@
 {
-  "name": "Homepage Matzler",
+  "name": "HomepageMatzler",
   "version": "1.0.0",
   "description": "Personal web site for Matthias Matzler",
   "keywords": "Matthias, Matzler, architect, artist, designer",
@@ -9,9 +9,15 @@
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
     "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.4"
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "rimraf": "^5.0.0"
+  },
+  "dependencies": {
+    "img": "^3.0.3"
   }
 }

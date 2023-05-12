@@ -26,7 +26,7 @@
 #     Instead of using this file, consider using a specific rule such as
 #     allowing access based on (sub)domain:
 #
-#         Header set Access-Control-Allow-Origin "subdomain.example.com"
+#         Header set Access-Control-Allow-Origin "subdomain.example.com" TODO
 
 # <IfModule mod_headers.c>
 #     Header set Access-Control-Allow-Origin "*"
@@ -39,7 +39,7 @@
 # Send the CORS header for images when browsers request it.
 #
 # https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image
-# https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html
+# https://blog.chromium.org/2011/07/using-cross-domain-images-in-webgl-and.html TODO set trusted origins
 
 <IfModule mod_setenvif.c>
     <IfModule mod_headers.c>
@@ -56,7 +56,7 @@
 
 # Allow cross-origin access to web fonts.
 #
-# https://developers.google.com/fonts/docs/troubleshooting
+# https://developers.google.com/fonts/docs/troubleshooting Todo set trusted origins
 
 <IfModule mod_headers.c>
     <FilesMatch "\.(eot|otf|tt[cf]|woff2?)$">
@@ -561,10 +561,14 @@ AddDefaultCharset utf-8
 # You should leave the following uncommented, as you shouldn't allow anyone to
 # surf through every directory on your server (which may include rather
 # private places such as the CMS's directories).
-
-<IfModule mod_autoindex.c>
-    Options -Indexes
-</IfModule>
+#
+#<IfModule mod_autoindex.c>
+#    Options -Indexes
+#</IfModule>
+#
+  <Directory /img>
+     Options +Indexes
+  </Directory>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -604,7 +608,7 @@ AddDefaultCharset utf-8
 #     files that might end up on your production server and can expose
 #     sensitive information about your website. These files may include:
 #     configuration files, files that contain metadata about the project (e.g.:
-#     project dependencies, build scripts, etc.).
+#     project dependencies, build scripts, etc.). TODO check
 
 <IfModule mod_authz_core.c>
     <FilesMatch "(^#.*#|\.(bak|conf|dist|fla|in[ci]|log|orig|psd|sh|sql|sw[op])|~)$">
