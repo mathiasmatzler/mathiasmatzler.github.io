@@ -74,13 +74,12 @@ $(document).ready(function () {
     var canvas = document.getElementById('myCanvas');
     // add text to canvas
     var ctx = canvas.getContext('2d');
-    ctx.transform(350/canvasWidth, 0, 0, 260/canvasHeight, 0, 0);
     ctx.font = "30px Arial";
     ctx.fillText("mathias@traum.institute", 25, canvasHeight - 12);
     ctx.fillText("0039 346 707 4064", canvasWidth - 275, canvasHeight - 12);
 
     // Convert the canvas to a data URL
-    var dataURL = ctx.toDataURL('image/png');
+    var dataURL = canvas.toDataURL('image/png');
 
     // Create a temporary link element
     var link = document.createElement('a');
@@ -91,6 +90,9 @@ $(document).ready(function () {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+
+    // last but not least reload the page
+    location.reload();
   });
 
   const imageContainer = $('#grid');
