@@ -116,8 +116,14 @@ $(document).ready(function () {
 
       // Create the image element and position it
       var img = $('<img>').attr('src', 'img/' + imageName)
-        .addClass('img-thumbnail').css("min-width", "400px");
-      var col = $('<div>').addClass('col m-5')
+        .addClass('img-thumbnail').css({
+          "max-width": "100%",
+          "max-height": "100%",
+        });
+      var col = $('<div>').addClass('col m-5').css({
+        "width": "400px",
+        "height": "400px",
+      })
         .append(img);
       row.append(col);
     });
