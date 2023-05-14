@@ -20,10 +20,14 @@ $(document).ready(function () {
       var col_num = parseInt(parts[1]);
 
       // Check if the row exists
-      var row = imageGrid.find('.row#row-' + row_num);
+      var row = imageGrid.find('#row-' + row_num);
       if (row.length === 0) {
         // Create the row if it doesn't exist
-        row = $('<div>').addClass('row').attr('id', 'row-' + row_num);
+        row = $('<div>').attr('id', 'row-' + row_num).css({
+          "display": "flex",
+          "flex-direction": "row",
+         "align-items": "center",
+        });
         imageGrid.append(row);
       }
 
@@ -33,11 +37,12 @@ $(document).ready(function () {
           "max-width": "100%",
           "max-height": "100%",
         });
-      var col = $('<div>').addClass('col m-5').css({
+      var col = $('<div>').css({
         "width": "400px",
         "height": "400px",
         "max-width": "400px",
         "max-height": "400px",
+        "margin": "20px",
       })
         .append(img);
       row.append(col);
@@ -103,6 +108,9 @@ $(document).ready(function () {
   }
 
   $('#downloadBtn').click(function () {
+    // show start overlay to prevent further drawing
+    $('#startOverlay').show();
+    // prepare canvas for download
     var canvas = document.getElementById('myCanvas');
     // add text to canvas
     var ctx = canvas.getContext('2d');
@@ -125,7 +133,6 @@ $(document).ready(function () {
     document.body.removeChild(link);
 
     // last but not least reload the page
-    location.reload();
   });
 
 
