@@ -56,7 +56,7 @@ $(document).ready(function () {
 
     if (!path) {
       path = new paper.Path();
-      path.strokeColor = 'black'; // Adjust the color as desired
+      path.strokeColor = '#DDDDDD'; // Adjust the color as desired
       path.strokeWidth = 5; // Adjust the stroke width as desired
       path.strokeCap = 'round'; // Adjust the stroke cap as desired
     }
@@ -75,6 +75,7 @@ $(document).ready(function () {
     // add text to canvas
     var ctx = canvas.getContext('2d');
     ctx.font = "30px Arial";
+    ctx.fillStyle = "#707070"
     ctx.fillText("mathias@traum.institute", 25, canvasHeight - 12);
     ctx.fillText("0039 346 707 4064", canvasWidth - 275, canvasHeight - 12);
 

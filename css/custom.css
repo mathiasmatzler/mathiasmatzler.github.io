@@ -37,13 +37,13 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  width: 400px; /* Adjust the size of the transparent circle */
-  height: 400px; /* Adjust the size of the transparent circle */
+  width: 500px; /* Adjust the size of the transparent circle */
+  height: 500px; /* Adjust the size of the transparent circle */
   border-radius: 50%;
   background-color: transparent;
   /*border: 5px solid white; !* Add a border to the transparent circle *!*/
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
-  /*box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1);*/
+  /*box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.8);*/
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 1);
 }
 
 #myCanvas {
