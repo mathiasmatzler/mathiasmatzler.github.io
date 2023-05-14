@@ -71,9 +71,16 @@ $(document).ready(function () {
   }
 
   $('#downloadBtn').click(function () {
-    // Convert the canvas to a data URL
     var canvas = document.getElementById('myCanvas');
-    var dataURL = canvas.toDataURL('image/png');
+    // add text to canvas
+    var ctx = canvas.getContext('2d');
+    ctx.transform(350/canvasWidth, 0, 0, 260/canvasHeight, 0, 0);
+    ctx.font = "30px Arial";
+    ctx.fillText("mathias@traum.institute", 25, canvasHeight - 12);
+    ctx.fillText("0039 346 707 4064", canvasWidth - 275, canvasHeight - 12);
+
+    // Convert the canvas to a data URL
+    var dataURL = ctx.toDataURL('image/png');
 
     // Create a temporary link element
     var link = document.createElement('a');
@@ -87,8 +94,7 @@ $(document).ready(function () {
   });
 
   const imageContainer = $('#grid');
-  var gridCellSize = 100; // Adjust to your desired cell size
-  var gridSpacing = 50; // Adjust to your desired spacing
+
   // Fetch the subfolders in the "images" folder
   console.log('Fetching subfolders...');
   $.getJSON('img/img.json', function (imageNames) {
