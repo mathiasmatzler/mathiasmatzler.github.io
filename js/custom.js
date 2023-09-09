@@ -98,10 +98,15 @@ $(document).ready(function () {
       new scopeTop.Point(-50000, -50000),
       new scopeTop.Size(100000, 100000)
     );
-    let mask = new scopeTop.Path.Rectangle(
-      new scopeTop.Point(-30, -30),
-      new scopeTop.Size(500, 500)
-    );
+    let mask = (isMobile) ?
+        new scopeTop.Path.Rectangle(
+            new scopeTop.Point(10, -30),
+            new scopeTop.Size(300, 300)
+        ) :
+        new scopeTop.Path.Rectangle(
+            new scopeTop.Point(-30, -30),
+            new scopeTop.Size(500, 500)
+        );
     // let debug = new scopeTop.Path.Rectangle(
     //   new scopeTop.Point(0, 0),
     //   new scopeTop.Size(500, 500)
