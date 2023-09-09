@@ -189,7 +189,7 @@ $(document).ready(function () {
       $('#startOverlay').click(() => {
         $('#myCanvas').get(0).requestPointerLock();
       });
-      $('#spyhole').click(() => {
+      $('#topCanvas').click(() => {
         $('#myCanvas').get(0).requestPointerLock();
       });
 
