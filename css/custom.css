@@ -60,6 +60,16 @@
   background: white;
 }
 
+#topCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  z-index: 50;
+  /*border: red 1px solid;*/
+  box-shadow: #222222 0px 0px 20px 0px;
+}
+
 #escText {
   position: absolute;
   top: 20px;

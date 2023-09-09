@@ -6,11 +6,12 @@
   "license": "commercial license",
   "author": "Lukas Alber",
   "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel index.html --open",
+    "build": "parcel build index.html --no-source-maps",
+    "dev": "parcel index.html --open --no-source-maps",
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "upload": "cd dist && git init && git remote add origin https://github.com/mathiasmatzler/mathiasmatzler.github.io.git && git add . && git commit -m \"v1.1\" && git push --set-upstream origin master -f"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
@@ -18,7 +19,12 @@
     "rimraf": "^5.0.0"
   },
   "dependencies": {
+    "bootstrap": "^4.6.2",
+    "file-saver": "^2.0.5",
     "img": "^3.0.3",
+    "jquery": "^3.6.4",
+    "load-js": "^3.1.1",
+    "paper": "^0.12.17",
     "typed.js": "^2.0.16"
   }
 }
