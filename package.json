@@ -1,8 +1,8 @@
 {
-  "name": "HomepageMatzler",
+  "name": "mathiasmatzler.com",
   "version": "1.0.0",
   "description": "Personal web site for Matthias Matzler",
-  "keywords": "Matthias, Matzler, architect, artist, designer",
+  "keywords": ["Matthias", "Matzler", "architect", "artist", "designer"],
   "license": "commercial license",
   "author": "Lukas Alber",
   "scripts": {
