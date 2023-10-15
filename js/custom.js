@@ -121,8 +121,8 @@ $(document).ready(function () {
 
     function updatePosition(event) {
       // Calculate the mouse position relative to the container
-      var mouseX = prevMouseX + event.movementX * 2; // *-1 to invert mouse movement
-      var mouseY = prevMouseY + event.movementY * 2; // *-1 to invert mouse movement
+      var mouseX = prevMouseX + event.movementX * 4; // *-1 to invert mouse movement
+      var mouseY = prevMouseY + event.movementY * 4; // *-1 to invert mouse movement
 
       console.log("mouseX: " + mouseX);
       console.log("mouseY: " + mouseY);
@@ -136,7 +136,7 @@ $(document).ready(function () {
       imageGrid.css({
         'transform': 'translate(' + ((mouseX - winCenterX) * -1) + 'px, ' + ((mouseY - winCenterY) * -1) + 'px)' // *-1 to invert mouse movement so that it moves in the opposite direction of the mouse
       });
-      invertedMask.translate(new scopeTop.Point(event.movementX * 2, event.movementY * 2));
+      invertedMask.translate(new scopeTop.Point(event.movementX * 4, event.movementY * 4));
       // debug.translate(new scopeTop.Point(event.movementX * 2, event.movementY * 2));
 
       if (!path) {
@@ -178,12 +178,12 @@ $(document).ready(function () {
       var ctx = canvas.getContext('2d');
       ctx.font = "30px Arial";
       ctx.fillStyle = "#707070"
-      ctx.fillText("mathias@traum.institute       0039 346 707 4064", 25, canvas.height - 12);
+      ctx.fillText("info@mathiasmatzler.com       0039 346 707 4064", 25, canvas.height - 12);
 
       // Convert the canvas to a data URL
       var dataURL = canvas.toDataURL('image/png');
       // call FileSaver.js
-      FileSaver.saveAs(dataURL, 'your own line of research.png');
+      FileSaver.saveAs(dataURL, 'Your own line of research.png');
     });
 
     // implementation of pointer lock for desktop or touch for mobile
@@ -199,21 +199,22 @@ $(document).ready(function () {
       });
 
       document.addEventListener("pointerlockchange", lockChangeAlert, false);
-
       function lockChangeAlert() {
         if (document.pointerLockElement === canvasBottom) {
           console.log("The pointer lock status is now locked");
           document.addEventListener("mousemove", updatePosition, false);
           $('#startOverlay').hide();
+          $('#downloadBtn').hide();
           $('#escText').show();
           new Typed('#escText', {
-            strings: ["Press ESC to exit..."],
+            strings: ["Press ESC..."],
             typeSpeed: 50,
           });
         } else {
           console.log("The pointer lock status is now unlocked");
           document.removeEventListener("mousemove", updatePosition, false);
           $('#escText').hide();
+          $('#downloadBtn').show();
         }
       }
     } else {
@@ -226,7 +227,6 @@ $(document).ready(function () {
       });
 
       var previousTouch;
-
       function entryMobile() {
         console.log("entryMobile");
         addEventListener("touchmove", e => {

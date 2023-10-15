@@ -1,3 +1,20 @@
+@font-face {
+  font-family: PrestigeEliteStd;
+  src: url("PrestigeEliteStd.otf") format("opentype");
+}
+
+@font-face {
+  font-family: PrestigeEliteStd;
+  font-weight: bold;
+  src: url("PrestigeEliteStd-Bd.otf") format("opentype");
+}
+
+html {
+  font-family: PrestigeEliteStd, serif !important;
+  color: #707070;
+  overflow: hidden;
+}
+
 #container {
   position: absolute;
   width: 100%; /* Adjust width as per your requirement */
@@ -41,7 +58,7 @@
   height: 500px; /* Adjust the size of the transparent circle */
   /*border-radius: 50%;*/
   background-color: transparent;
-  /*border: 5px solid white; !* Add a border to the transparent circle *!*/
+  /*border: 5px solid red; !* Add a border to the transparent circle *!*/
   /*box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);*/
   box-shadow: 0 0 0 9999px rgba(255, 255, 255, 1);
 }
@@ -67,20 +84,75 @@
   background: transparent;
   z-index: 50;
   /*border: red 1px solid;*/
-  box-shadow: #222222 0px 0px 20px 0px;
+  /*box-shadow: #222222 0px 0px 20px 0px;*/
 }
 
 #escText {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
-  font-size: 20px;
-  color: black;
 }
 
 #downloadBtn {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  border: none;
+}
+
+
+/*non mobile placement*/
+#email {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  margin-right: 25px;
+  margin-top: 0;
+}
+
+#name {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 35px;
+}
+
+#copyright {
+  position: absolute;
+  bottom: 0;
+  left: 100%; /* This moves the text 25px to the right of the box's right edge */
+  margin-left: 40px;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/*mobile placement*/
+@media only screen and (max-width: 600px) {
+  #email {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    top: 100%;
+    margin: unset;
+  }
+
+  #name {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    top: 100%;
+    margin: unset;
+  }
+
+  #copyright {
+    position: relative;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    top: 100%;
+    margin: unset;
+  }
 }
