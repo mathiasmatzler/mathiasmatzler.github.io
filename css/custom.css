@@ -99,6 +99,7 @@ html {
   left: 20px;
   background: transparent;
   border: none;
+  z-index: 75;
 }
 
 

@@ -11,7 +11,7 @@
     "start": "npm run build && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf dist",
-    "upload": "cd dist && git init && git remote add origin https://github.com/mathiasmatzler/mathiasmatzler.github.io.git && git add . && git commit -m \"v1.1\" && git push --set-upstream origin master -f"
+    "upload": "cd dist && git init && git remote add origin https://github.com/mathiasmatzler/mathiasmatzler.github.io.git && git add . && git commit -m \"v1.2\" && git push --set-upstream origin master -f"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4",

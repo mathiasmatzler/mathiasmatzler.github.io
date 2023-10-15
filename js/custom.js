@@ -63,7 +63,7 @@ $(document).ready(function () {
     // init canvas dimensions
     canvasBottom.width = canvasTop.width = imageGrid.width();
     canvasBottom.height = canvasTop.height = imageGrid.height();
-    console.log("canvas: ", canvasBottom.width, canvasBottom.height);
+    // console.log("canvas: ", canvasBottom.width, canvasBottom.height);
 
     // Calculate center of container
     var winCenterX = window.innerWidth / 2;
@@ -124,8 +124,8 @@ $(document).ready(function () {
       var mouseX = prevMouseX + event.movementX * 4; // *-1 to invert mouse movement
       var mouseY = prevMouseY + event.movementY * 4; // *-1 to invert mouse movement
 
-      console.log("mouseX: " + mouseX);
-      console.log("mouseY: " + mouseY);
+      // console.log("mouseX: " + mouseX);
+      // console.log("mouseY: " + mouseY);
 
       $('#myCanvas').css({
         'transform': 'translate(' + ((mouseX - winCenterX) * -1) + 'px, ' + ((mouseY - winCenterY) * -1) + 'px)' // *-1 to invert movement of container so that it moves in the opposite direction of the mouse
@@ -201,17 +201,17 @@ $(document).ready(function () {
       document.addEventListener("pointerlockchange", lockChangeAlert, false);
       function lockChangeAlert() {
         if (document.pointerLockElement === canvasBottom) {
-          console.log("The pointer lock status is now locked");
+          // console.log("The pointer lock status is now locked");
           document.addEventListener("mousemove", updatePosition, false);
           $('#startOverlay').hide();
           $('#downloadBtn').hide();
           $('#escText').show();
           new Typed('#escText', {
-            strings: ["Press ESC..."],
+            strings: ["press esc..."],
             typeSpeed: 50,
           });
         } else {
-          console.log("The pointer lock status is now unlocked");
+          // console.log("The pointer lock status is now unlocked");
           document.removeEventListener("mousemove", updatePosition, false);
           $('#escText').hide();
           $('#downloadBtn').show();
@@ -228,7 +228,7 @@ $(document).ready(function () {
 
       var previousTouch;
       function entryMobile() {
-        console.log("entryMobile");
+        // console.log("entryMobile");
         addEventListener("touchmove", e => {
           e.preventDefault(); // prevent scrolling when inside DIV (mobile)
           e.stopImmediatePropagation();
