@@ -160,16 +160,19 @@ html {
     margin: unset;
   }
 
-  #escText {
-    position: relative;
-    left: unset;
-    bottom: unset;
-
-  }
-
   #downloadBtn {
     position: relative;
     left: unset;
     bottom: unset;
+    top: 100%;
+    margin: unset;
+  }
+
+  #escText {
+    position: relative;
+    left: unset;
+    bottom: unset;
+    top: 100%;
+    margin: unset;
   }
 }
