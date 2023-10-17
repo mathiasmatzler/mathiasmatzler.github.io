@@ -162,17 +162,17 @@ html {
 
   #downloadBtn {
     position: relative;
-    left: unset;
+    right: unset;
     bottom: unset;
-    top: 100%;
+    left: unset;
     margin: unset;
   }
 
   #escText {
     position: relative;
-    left: unset;
+    right: unset;
     bottom: unset;
-    top: 100%;
+    left: unset;
     margin: unset;
   }
 }
