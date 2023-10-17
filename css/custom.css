@@ -102,6 +102,17 @@ html {
   z-index: 75;
 }
 
+@media only screen and (max-width: 600px) {
+  #escText {
+    bottom: 0;
+
+  }
+
+  #downloadBtn {
+    bottom: 0;
+  }
+}
+
 
 /*non mobile placement*/
 #email {
