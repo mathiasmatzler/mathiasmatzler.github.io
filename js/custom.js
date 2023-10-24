@@ -10,7 +10,7 @@ $(document).ready(function () {
   var isMobile = $(window).width() < 600;
 
   // start overlay infomation text
-  new Typed('#startOverlay>p', {
+  new Typed('#escText', {
     strings: ["Click to start..."],
     typeSpeed: 50,
   });
@@ -172,11 +172,16 @@ $(document).ready(function () {
     $('#downloadBtn').click(function () {
       // show start overlay to prevent further drawing
       $('#startOverlay').show();
+      $('#escText').show();
+      new Typed('#escText', {
+        strings: ["Click to start..."],
+        typeSpeed: 50,
+      });
       // prepare canvas for download
       var canvas = document.getElementById('myCanvas');
       // add text to canvas
       var ctx = canvas.getContext('2d');
-      ctx.font = "30px Arial";
+      ctx.font = "30px PrestigeEliteStd";
       ctx.fillStyle = "#707070"
       ctx.fillText("info@mathiasmatzler.com       0039 346 707 4064", 25, canvas.height - 12);
 
@@ -191,7 +196,7 @@ $(document).ready(function () {
 
       // ------------------ Pointer Lock ------------------ //
       // Lock the pointer when the user clicks on the canvas
-      $('#startOverlay').click(() => {
+      $('#escText').click(() => {
         $('#myCanvas').get(0).requestPointerLock();
       });
       $('#topCanvas').click(() => {
@@ -219,10 +224,10 @@ $(document).ready(function () {
       }
     } else {
       // ------------------ Touch Mobile ------------------ //
-      $('#startOverlay').click(() => {
+      $('#escText').click(() => {
         // update initial position
         updatePosition({movementX: 0, movementY: 0});
-        // hide overlay, show spyhole, show escText, add event listeners
+        // hide overlay, show spyhole, hide escText, add event listeners
         entryMobile();
       });
 
@@ -253,6 +258,7 @@ $(document).ready(function () {
         });
 
         $('#startOverlay').hide();
+        $('#escText').hide();
       }
     }
   });
